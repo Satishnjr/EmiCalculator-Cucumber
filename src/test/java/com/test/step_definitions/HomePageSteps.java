@@ -7,6 +7,7 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
+import com.test.helpers.Hooks;
 import com.test.modules.HomePageAction;
 import com.test.pageobjects.HomePageObjects;
 

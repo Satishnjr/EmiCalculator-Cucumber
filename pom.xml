@@ -2,11 +2,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.Test-Cucumber-Framework</groupId>
-	<artifactId>Test-Cucumber-Framework</artifactId>
+	<groupId>EmiCalculator-Cucumber</groupId>
+	<artifactId>EmiCalculator-Cucumber</artifactId>
 	<version>0.0.1</version>
 	<packaging>jar</packaging>
-	<name>Cucumber-Test-Cucumber-Framework</name>
+	<name>EmiCalculator-Cucumber</name>
 
 	<properties>
 		<cucumber.version>1.2.5</cucumber.version>

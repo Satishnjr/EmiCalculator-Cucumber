@@ -1,4 +1,4 @@
-package com.test.step_definitions;
+package com.test.helpers;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -28,35 +28,10 @@ public class Hooks {
 	 */
 	public void openBrowser() throws MalformedURLException {
 		System.out.println("Called openBrowser");
-		System.setProperty("webdriver.chrome.driver", "C:\\chromedriver_win32\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\chrome-driver\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
-
-	}
-
-	public static RemoteWebDriver driver1;
-
-	@BeforeTest
-	@Parameters({ "platform", "browserName", "remoteurl" })
-	public void beforeTest(String platform, String browserName, String remoteurl) throws MalformedURLException {
-
-		System.setProperty("webdriver.gecko.driver", "D:\\geckodriver.exe");
-		DesiredCapabilities cap = null;
-
-		if (browserName.equals("firefox")) {
-			cap = new DesiredCapabilities().firefox();
-			cap.setBrowserName("firefox");
-
-		} else if (browserName.equals("chrome")) {
-			cap = new DesiredCapabilities().chrome();
-			cap.setBrowserName("chrome");
-		}
-
-		cap.setPlatform(Platform.XP);
-		// URL url = new URL("http://192.168.2.17:4444/wd/hub");
-
-		driver1 = new RemoteWebDriver(new URL(remoteurl), cap);
 
 	}
 
@@ -81,37 +56,31 @@ public class Hooks {
 		driver.quit();
 
 	}
-}
+	
 /*
- * @After public void embedScreenshot(ITestResult result) throws Throwable { if
- * (ITestResult.FAILURE == result.getStatus()) { try { TakesScreenshot ts =
- * (TakesScreenshot) driver; File source = ts.getScreenshotAs(OutputType.FILE);
- * 
- * FileUtils.copyFile(source, new File(
- * "D:\\BitBucket\\teluguvideos\\ScreenShots.jpeg")); //String res =
- * result.getName();
- * 
- * 
- * } catch (Exception e) {
- * 
- * System.out.println("Exception while Taking ScreenShot"); }
- * 
- * } } }
- */
+	public static RemoteWebDriver driver1;
 
-/*
- * @Before
- *//**
-	 * Delete all cookies at the start of each scenario to avoid shared state
-	 * between tests
-	 */
-/*
- * public static WebDriver openBrowserNexus() throws MalformedURLException {
- * System.out.println("Called openBrowser");
- * System.setProperty("webdriver.chrome.driver",
- * "C:\\chromedriver_win32\\2.33\\chromedriver.exe"); driver = new
- * ChromeDriver(); driver.manage().deleteAllCookies();
- * driver.manage().window().setSize(new Dimension(412, 732));
- * 
- * return driver; }
- */
+	@BeforeTest
+	@Parameters({ "platform", "browserName", "remoteurl" })
+	public void beforeTest(String platform, String browserName, String remoteurl) throws MalformedURLException {
+
+		System.setProperty("webdriver.gecko.driver", "D:\\geckodriver.exe");
+		DesiredCapabilities cap = null;
+
+		if (browserName.equals("firefox")) {
+			cap = new DesiredCapabilities().firefox();
+			cap.setBrowserName("firefox");
+
+		} else if (browserName.equals("chrome")) {
+			cap = new DesiredCapabilities().chrome();
+			cap.setBrowserName("chrome");
+		}
+
+		cap.setPlatform(Platform.XP);
+		// URL url = new URL("http://192.168.2.17:4444/wd/hub");
+
+		driver1 = new RemoteWebDriver(new URL(remoteurl), cap);
+*/
+	}
+
+

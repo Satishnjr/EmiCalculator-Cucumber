@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 import com.test.helpers.DataHelper;
+import com.test.helpers.Hooks;
 import com.test.modules.LoansPageAction;
 import com.test.pageobjects.LoansPageObjects;
 
@@ -18,12 +19,13 @@ public class ExcelLoansPageSteps {
 
 	public ExcelLoansPageSteps() {
 		driver = Hooks.driver;
+		PageFactory.initElements(driver, LoansPageObjects.class);
 	}
 
 	@Then("^I read data from excel and validate emi details$")
 	public void i_read_data_from_excel_and_validate_emi_details()
 			throws Throwable {
-		PageFactory.initElements(driver, LoansPageObjects.class);
+		
 		List<HashMap<String, String>> data = DataHelper.data();
 		
 		for (HashMap<String, String> map : data) {

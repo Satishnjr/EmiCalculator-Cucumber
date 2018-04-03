@@ -23,8 +23,8 @@ public class HomePageAction {
 		Reporter.log("Click action is perfromed on Calculator and Indicators Link");
 	}
 
-	public static void faqNav(WebDriver driver) {
-
+	public static void faqNav(WebDriver driver) throws Throwable {
+        Thread.sleep(3000);
 		HomePageObjects.faqsDropDown.click();
 
 		Log.info("Click action is perfromed on faqs Link");
