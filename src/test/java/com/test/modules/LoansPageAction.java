@@ -55,6 +55,8 @@ public class LoansPageAction {
 
 		String TotalPay = LoansPageObjects.LoanTotalPay.getText();
 		Assert.assertEquals(loanTotalPay, TotalPay);
+		
+	
 	}
 
 }

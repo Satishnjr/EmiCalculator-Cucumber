@@ -6,8 +6,8 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "classpath:features", plugin = {
+@CucumberOptions(features = "classpath:features/CalculateEMI.feature:14", plugin = {
 		"pretty", "html:target/cucumber-html-report", "json:cucumber.json" }, tags = {}, glue = {"com.test.helpers","com.test.step_definitions"})
 public class TestRunner {
- 
+
 }

@@ -1,18 +1,12 @@
 package com.test.helpers;
 
 import java.net.MalformedURLException;
-import java.net.URL;
 
 import org.openqa.selenium.OutputType;
-import org.openqa.selenium.Platform;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
 
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
@@ -28,7 +22,7 @@ public class Hooks {
 	 */
 	public void openBrowser() throws MalformedURLException {
 		System.out.println("Called openBrowser");
-		System.setProperty("webdriver.chrome.driver", "C:\\chrome-driver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "D:\\Selenium\\EmiCalculator-Cucumber\\Drivers\\ChromeDriver\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
@@ -44,6 +38,7 @@ public class Hooks {
 		if (scenario.isFailed()) {
 			try {
 				scenario.write("Current Page URL is " + driver.getCurrentUrl());
+		
 
 				byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
 				scenario.embed(screenshot, "image/png");

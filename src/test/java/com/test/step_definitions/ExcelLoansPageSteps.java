@@ -34,4 +34,14 @@ public class ExcelLoansPageSteps {
 			LoansPageAction.validateLoanDetails(map.get("Loan EMI"), map.get("Total Interest Payable"), map.get("Total Payment"));
 		}
 	}
+	
+	public void i_read_data_from_excel_and_validate_Personal_Loan_emi_details() throws Throwable {
+List<HashMap<String, String>> data = DataHelper.data();
+		
+		for (HashMap<String, String> map : data) {
+			System.out.println(map);
+			LoansPageAction.enterLoanData(map.get("Home Loan Amount"), map.get("Interest Rate"), map.get("Loan Tenure"));
+			LoansPageAction.validateLoanDetails(map.get("Loan EMI"), map.get("Total Interest Payable"), map.get("Total Payment"));
+		}
+	}
 }

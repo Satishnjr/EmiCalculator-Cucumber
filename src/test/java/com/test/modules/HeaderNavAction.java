@@ -39,10 +39,12 @@ public class HeaderNavAction {
 		for (WebElement links : items) {
 			if (links.isDisplayed()) {
 				visibleElementCount++;
+				System.out.println(links.getText());
 			}
 
 		}
 		System.out.println(visibleElementCount);
+		
 
 		Assert.assertEquals(4, visibleElementCount);
 
@@ -58,6 +60,10 @@ public class HeaderNavAction {
 		System.out.println(items.size());
 		Assert.assertTrue(items.size() > 3);
 		Assert.assertTrue(items.size() < 10);
+		
+		for (WebElement links : items) {
+				System.out.println(links.getText());
+			}
 
 	}
 

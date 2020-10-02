@@ -20,6 +20,7 @@ public class HomePageSteps {
 
 	public HomePageSteps() {
 		driver = Hooks.driver;
+		PageFactory.initElements(driver, HomePageObjects.class);
 	}
 
 	@Given("^I open EMI Calculator website$")
@@ -31,14 +32,12 @@ public class HomePageSteps {
 	@Given("^I click on Calculators and Indicators Nav Link$")
 	public void i_click_on_Calculators_and_Indicators_Nav_Link()
 			throws Throwable {
-		PageFactory.initElements(driver, HomePageObjects.class);
 		HomePageAction.calculator(driver);
 
 	}
 
 	@Given("^I click on FAQS Nav Link$")
 	public void i_click_on_FAQS_Nav_Link() throws Throwable {
-		PageFactory.initElements(driver, HomePageObjects.class);
 		HomePageAction.faqNav(driver);
 	}
 
@@ -51,7 +50,6 @@ public class HomePageSteps {
 
 	@When("^I Click on menu$")
 	public void i_Click_on_menu() throws Throwable {
-		PageFactory.initElements(driver, HomePageObjects.class);
 		HomePageAction.mobileMenuNav(driver);
 	}
 

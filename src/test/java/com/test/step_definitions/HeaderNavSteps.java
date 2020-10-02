@@ -19,23 +19,23 @@ public class HeaderNavSteps {
 
 	public HeaderNavSteps() {
 		driver = Hooks.driver;
+		PageFactory.initElements(driver, HomePageObjects.class);
 	}
 
 	@Then("^I Verify all the links in menu$")
 	public void i_Verify_all_the_links_in_menu() throws Throwable {
-		PageFactory.initElements(driver, HomePageObjects.class);
 		HeaderNavAction.headerNav(driver);
 	}
 
 	@Then("^I Verify it shows all the sub links$")
 	public void i_Verify_it_shows_all_the_sub_links() throws Throwable {
-		PageFactory.initElements(driver, HomePageObjects.class);
 		HeaderNavAction.subNavLinks(driver);
 	}
+	
+	
 
 	@Then("^I Verify all the FAQS sub links$")
 	public void i_Verify_all_the_FAQS_sub_links() throws Throwable {
-		PageFactory.initElements(driver, HomePageObjects.class);
 		HeaderNavAction.faqNavLinks(driver);
 	}
 

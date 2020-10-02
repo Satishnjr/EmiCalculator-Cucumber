@@ -32,7 +32,8 @@ public class HomePageAction {
 		Reporter.log("Click action is perfromed on faqs Link");
 	}
 
-	public static void mobileMenuNav(WebDriver driver) {
+	public static void mobileMenuNav(WebDriver driver) throws Throwable {
+		Thread.sleep(3000);
 		HomePageObjects.mobilemenu.click();
 
 		Log.info("Click action is perfromed on faqs Link");
